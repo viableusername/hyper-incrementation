@@ -1,0 +1,148 @@
+@font-face {
+    font-family: comic-parchment;
+    src: url(Comic-Papyrus.ttf);
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'comic-parchment';
+   background-color: #1EC2F4;
+}
+
+#box1 {
+  background-color: red;
+  width: 15%;
+  height: 85%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  overflow-y: hidden;
+}
+#box1 :hover {
+  overflow-y: scroll;
+}
+
+#box2 {
+  background-color: green;
+  width: 85%;
+  height: 15%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  overflow-x: hidden;
+  display: inline-block;
+}
+#box2 :hover {
+  overflow-x: scroll;
+}
+
+#box3 {
+  position: fixed;
+  width: 15%;
+  height: 15%;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  border:2%;
+  border-style: solid;
+  border-color: black;
+  box-sizing: border-box;
+}
+
+
+@keyframes flame {
+  0% {
+    border-color: transparent;
+    box-shadow: inset 0 0 10px 2px #ff0000, inset 0 0 20px 4px #ff6600, inset 0 0 30px 6px #ffcc00, inset 0 0 40px 8px #ffff00;
+  }
+  100% {
+    border-color: transparent;
+    box-shadow: inset 0 0 20px 4px #ff0000, inset 0 0 30px 6px #ff6600, inset 0 0 40px 8px #ffcc00, inset 0 0 50px 10px #ffff00;
+  }
+}
+
+@keyframes lightning {
+  0% {
+    border-color: transparent;
+    box-shadow: inset 0 0 10px 2px #ffffff, inset 0 0 20px 4px #ffffff, inset 0 0 30px 6px #ffffff, inset 0 0 40px 8px #ffffff;
+  }
+  100% {
+    border-color: transparent;
+    box-shadow: inset 0 0 20px 4px #ffffff, inset 0 0 30px 6px #ffffff, inset 0 0 40px 8px #ffffff, inset 0 0 50px 10px #ffffff;
+  }
+}
+
+#box4 {
+  background-color: yellow;
+  width: 85%;
+  height: 85%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  overflow-y: hidden;
+}
+
+#box4:hover {
+  overflow-y: scroll;
+}
+#box3-symbol {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* 
+#box3-symbol {
+  max-width: 5%;
+  max-height: 5%;
+  object-fit: contain;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block; 
+  justify-content: center;
+  align-items: center;
+} */
+
+/*
+h1 {
+  font-size: 60px;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  color: #00539f;
+  text-shadow: 4px 4px 10px black;
+}
+
+p,
+li {
+  font-size: 20px;
+  line-height: 2;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+body {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #B9F2FF;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 	180px;
+  max-height: 	183px;
+}
+*/
