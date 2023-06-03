@@ -9,11 +9,19 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'comic-parchment';
-   background-color: #1EC2F4;
+   background-color: black;
 }
 
-#box1 {
-  background-color: red;
+hr {
+  border: none;
+  height: 3px;
+  /* Set the hr color */
+  color: black;  /* old IE */
+  background-color: black;  /* Modern Browsers */
+}
+
+#side-bar {
+  background-color: gray;
   width: 15%;
   height: 85%;
   position: fixed;
@@ -21,27 +29,73 @@ html, body {
   bottom: 0;
   z-index: 2;
   overflow-y: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+
+  border:2%;
+  border-style: solid;
+  border-color: black;
+  box-sizing: border-box;
 }
-#box1 :hover {
-  overflow-y: scroll;
+#side-bar:hover {
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+}
+#side-bar::-webkit-scrollbar {
+  display: none;
 }
 
-#box2 {
-  background-color: green;
+#side-bar button {
+  margin: 5% 10% 0% 10%;
+  width: 75%;
+  height: 10%;
+  background-color: lightgrey;
+  color: black;
+  border: 5% solid;
+}
+
+#top-bar {
+  background-color: gray;
   width: 85%;
   height: 15%;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 2;
-  overflow-x: hidden;
-  display: inline-block;
+  overflow-x: auto;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border:2%;
+  border-style: solid;
+  border-color: black;
+  box-sizing: border-box;
 }
-#box2 :hover {
-  overflow-x: scroll;
+#top-bar:hover {
+  overflow-x: auto;
 }
 
-#box3 {
+#top-bar button {
+  width: 10%;
+  height: 75%;
+  background-color: lightgrey;
+  color: black;
+  margin: 0% 0% 0% 1%;
+  padding: 2px;
+  border-radius: 5%;
+}
+#top-bar button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+#intersection {
   position: fixed;
   width: 15%;
   height: 15%;
@@ -52,46 +106,9 @@ html, body {
   border-style: solid;
   border-color: black;
   box-sizing: border-box;
+  z-index: 9;
 }
-
-
-@keyframes flame {
-  0% {
-    border-color: transparent;
-    box-shadow: inset 0 0 10px 2px #ff0000, inset 0 0 20px 4px #ff6600, inset 0 0 30px 6px #ffcc00, inset 0 0 40px 8px #ffff00;
-  }
-  100% {
-    border-color: transparent;
-    box-shadow: inset 0 0 20px 4px #ff0000, inset 0 0 30px 6px #ff6600, inset 0 0 40px 8px #ffcc00, inset 0 0 50px 10px #ffff00;
-  }
-}
-
-@keyframes lightning {
-  0% {
-    border-color: transparent;
-    box-shadow: inset 0 0 10px 2px #ffffff, inset 0 0 20px 4px #ffffff, inset 0 0 30px 6px #ffffff, inset 0 0 40px 8px #ffffff;
-  }
-  100% {
-    border-color: transparent;
-    box-shadow: inset 0 0 20px 4px #ffffff, inset 0 0 30px 6px #ffffff, inset 0 0 40px 8px #ffffff, inset 0 0 50px 10px #ffffff;
-  }
-}
-
-#box4 {
-  background-color: yellow;
-  width: 85%;
-  height: 85%;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 2;
-  overflow-y: hidden;
-}
-
-#box4:hover {
-  overflow-y: scroll;
-}
-#box3-symbol {
+#intersection-symbol {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -99,50 +116,96 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 2px;
 }
-/* 
-#box3-symbol {
-  max-width: 5%;
-  max-height: 5%;
-  object-fit: contain;
+
+#gameBody {
+  background-color: silver;
+  width: 85%;
+  height: 85%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+#gameBody:hover {
+  overflow-y: auto;
+}
+
+.ach-unlocked {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0ba903+0,099002+44,056e00+100 */
+  background: rgb(11,169,3); /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  rgba(11,169,3,1) 0%, rgba(9,144,2,1) 44%, rgba(5,110,0,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  rgba(11,169,3,1) 0%,rgba(9,144,2,1) 44%,rgba(5,110,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  rgba(11,169,3,1) 0%,rgba(9,144,2,1) 44%,rgba(5,110,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0ba903', endColorstr='#056e00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  background-clip: padding-box;
+  vertical-align: top;
+  text-align: center;
+  width: 128px;
+  height: 128px;
+  padding: 4px;
+  border: solid;
+  border-width: 3px 3px;
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block; 
-  justify-content: center;
-  align-items: center;
-} */
+  margin: 1px 1px 1px 1px;
+}
 
-/*
-h1 {
-  font-size: 60px;
+.ach-locked {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a90329+0,8f0222+44,6d0019+100;Brown+Red+3D */
+  background: rgb(169,3,41); /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  background-clip: padding-box;
+  vertical-align: top;
   text-align: center;
-  margin: 0;
-  padding: 20px 0;
-  color: #00539f;
-  text-shadow: 4px 4px 10px black;
+  width: 128px;
+  height: 128px;
+  padding: 4px;
+  border: solid;
+  border-width: 3px 3px;
+  position: relative;
+  margin: 1px 1px 1px 1px;
 }
 
-p,
-li {
-  font-size: 20px;
-  line-height: 2;
-  letter-spacing: 1px;
+.ach-hidden {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e3e3e3+0,adadad+24,707070+50,9a9a9a+79,b9b9b9+100 */
+  background: rgb(227,227,227); /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  rgba(227,227,227,1) 0%, rgba(173,173,173,1) 24%, rgba(112,112,112,1) 50%, rgba(154,154,154,1) 79%, rgba(185,185,185,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  rgba(227,227,227,1) 0%,rgba(173,173,173,1) 24%,rgba(112,112,112,1) 50%,rgba(154,154,154,1) 79%,rgba(185,185,185,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  rgba(227,227,227,1) 0%,rgba(173,173,173,1) 24%,rgba(112,112,112,1) 50%,rgba(154,154,154,1) 79%,rgba(185,185,185,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e3e3', endColorstr='#b9b9b9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  background-clip: padding-box;
+  vertical-align: top;
+  text-align: center;
+  width: 128px;
+  height: 128px;
+  padding: 4px;
+  border: solid;
+  border-width: 3px 3px;
+  position: relative;
+  margin: 1px 1px 1px 1px;
+}
+
+.ach-hidden * {
+  display: none;
+}
+
+.ach-unlocked .ach-hidden-text, .ach-locked .ach-hidden-text {
+  display: none;
+}
+
+.ach-hidden .ach-hidden-text {
+  display: contents;
+
+  vertical-align: middle;
   text-align: center;
 }
-
-body {
-  width: 800px;
-  margin: 0 auto;
-  background-color: #B9F2FF;
-  padding: 0 20px 20px 20px;
-  border: 5px solid black;
-}
-img {
-  display: block;
-  margin: 0 auto;
-  max-width: 	180px;
-  max-height: 	183px;
-}
-*/

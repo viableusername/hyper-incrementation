@@ -1,30 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>incremental decrementation</title>
+    <title>hyper incrementation</title>
+    <link rel="icon" href="./images/aleph.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:title" content="incremental decrementation" />
-    <meta property="og:url" content="https://viableusername.github.io/" />
-    <meta property="og:description" content="a gaem where you incrementally decrement" />
+    <meta property="og:title" content="hyper incrementation" />
+    <meta property="og:url" content="https://viableusername.github.io/hyper-incrementation/"/>
+    <meta property="og:description" content="incriminating the hyperoperator, one succession at a time" />
     <link href="styles/style.css" rel="stylesheet" />
+    <script src="scripts/OmegaNum.js"></script>
+    <script src="scripts/script.js"></script>
 </head>
 <body>
-    <div id="box1">
-    <p>This is box 1.</p>
-    <p>This is box 4.<br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br></p>
+    <div id="side-bar">
+        <!--<p>This is box 1.</p>
+        <p>This is box 4.<br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br></p>
+        -->
+        <div class="hyper0 side-bar-div" id="hyper0-side" style="display: none;">
+            <button id="hyper0-side-operators">operators</button>
+            <button id="hyper0-side-unity" style="display: none;">Tree of Unity</button>
+            <button id="hyper0-side-akashic" style="display: none;">Akashic Record</button>
+        </div>
+        <div class="information side-bar-div" id="information-side" style="display: none;">
+            <button id="stats-button">Statistics</button>
+        </div>
+        <div class="settings side-bar-div" id="settings-side" style="display: none;">
+            <button id="settings-button">Settings</button>
+        </div>
+        <div class="achievements side-bar-div" id="achievements-side" style="display: none;">
+        </div>
     </div>
-    <div id="box2">
-    <p>This is box 2.</p>
-    <span>hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi</span>
+    <div id="top-bar">
+    <button onclick="changeMenu('hyper0')" title="hyper+0"><img src="images/aleph.png"></button>
+    <button onclick="changeMenu('information')" title="stats & info"><img src="images/information.png"></button>
+    <button onclick="changeMenu('settings')" title="settings & automation"><img src="images/gear.png"></button>
+    <button onclick="changeMenu('achievements')" title="achievements"><img src="images/xi.png"></button>
     </div>
-    <div id="box3">
-        <img src="images/aleph.png" id="box3-symbol">
-        <!--<div id="box3-symbol">&#x5D0;</div>-->
+    <div id="intersection">
+        <img src="images/aleph.png" id="intersection-symbol">
     </div>
-    <div id="box4">
-    <p>This is box 4.<br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br></p>
-    </div>      
+    <div id="gameBody">
+    <!-- <p>This is box 4.<br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br>my new line<Br></p> -->
+        <div class="game-body-div" id="hyper0-body" style="display: none;">
+            <div id="hyper0-body-operators">
+                <span>You have <span class="m1">1</span> Atomus</span>
+                <hr>
+                <label><button id="increment-m1">count</button></label>
+                <table style="margin-left: auto; margin-right: auto; border-spacing: 24px 0px; border-collapse: separate;">
+                    <tbody>
+                        <tr>
+                            <td class="tcell">0: Incriminator</td>
+                            <td class="tcell"><span id="op-0-display">0</span></td>
+                            <td class="tcell"><button id="buy-op-0">buy 1 for <span id="op-0-cost"></span> Atomus</button></td>
+                        </tr>
+                        <tr>
+                            <td class="tcell">1: Summarizer</td>
+                            <td class="tcell"><span id="op-1-display">0</span></td>
+                            <td class="tcell"><button id="buy-op-1">buy 1 for <span id="op-1-cost"></span> Atomus</button></td>
+                        </tr>
+                        <tr>
+                            <td class="tcell">2: Multiplier</td>
+                            <td class="tcell"><span id="op-2-display">0</span></td>
+                            <td class="tcell"><button id="buy-op-2">buy 1 for <span id="op-2-cost"></span> Atomus</button></td>
+                        </tr>
+                        <tr>
+                            <td class="tcell">3: Exponentiator</td>
+                            <td class="tcell"><span id="op-3-display">0</span></td>
+                            <td class="tcell"><button id="buy-op-3">buy 1 for <span id="op-3-cost"></span> Atomus</button></td>
+                        </tr>
+                        <tr>
+                            <td class="tcell">4: Tetrator</td>
+                            <td class="tcell"><span id="op-4-display">0</span></td>
+                            <td class="tcell"><button id="buy-op-4">buy 1 for <span id="op-4-cost"></span> Atomus</button></td>
+                        </tr>
+                        <tr>
+                            <td class="tcell">5: Pentator</td>
+                            <td class="tcell"><span id="op-5-display">0</span></td>
+                            <td class="tcell"><button id="buy-op-5">buy 1 for <span id="op-5-cost"></span> Atomus</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+        <div class="game-body-div" id="information-body" style="display: none;">
+            <p>this is the information body</p>
+            <div id="info-upgrades" style="display: none;">
+                <h2>Upgrades</h2>
+                <hr>
+                <h3>fracture reality</h3>
+                <p>fracturing reality makes things update every tick rather than in set intervals</p>
+                <p>before the fracture reality upgrade, your operators update once every x amount of time but after the fracturing they will update every tick (50ms aka 20t/second) so if your incriminator increments every second, then it will increment 1/20th of what it normally increments every 20th of a second, for something like the incriminator this doesn't make much of a difference but it will give a boost to some operators like the multiplicator, if we do 1 x2 once every second then it becomes 2, 4, 8, etc. but if we do it every 1/20th of a second then it becomes 2.65, 7.03, 18.68, etc</p>
+            </div>
+            <div id="info-credits" style="display: none;">
+                <h2>Credits and attributions (WIP)</h2>
+                <h3><strong><u>SPOILERS!</u></strong></h3>
+                <p>this page contains spoilers for the names of things in the game that you might have not unlocked yet, as well as things that haven't been added yet</p>
+                <hr>
+                <p>
+                    xi (Ξ) icon: By <a href="https://commons.wikimedia.org/wiki/User:Kwamikagami" title="User:Kwamikagami">Kwamikagami</a> - Own work, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=132158365">Link</a> - i've trimmed off the whitespace as it was troublesome
+                </p>
+                <p>some CSS is based on CSS from <a href="https://dan-simon.github.io/misc/fe000000/">hex - by dan simon</a> and <a href="https://jacorb90.me/NG-plus-3C/">NG+++C by jacorb90</a></p>
+                <p>many game mechanics are inspired by mechanics from other games, these games include but aren't limited to: <a href="https://dan-simon.github.io/misc/fe000000/">hex - by dan simon</a>, <a href="https://ivark.github.io/AntimatterDimensions/">Antimatter Dimension by hevipelle</a>, <a href="https://23html.github.io/">proto24 by Corc</a></p>
+                <ul>
+                    <li><a href="https://dan-simon.github.io/misc/fe000000/">HEX:</a> Chroma, Powers, and Tesseract remnants (finality shards)</li>
+                    <li><a href="https://ivark.github.io/AntimatterDimensions/">AD: </a> minions (replicanti), <strong>[REDACTED]</strong> (celestials), singularities (black hole), skill/knowledge tree (perk tree), Chroma (alchemy)</li>
+                    <li><a href="https://23html.github.io/">proto24:</a> ?</li>
+                    <li><a href="https://store.steampowered.com/app/1546320/Your_Chronicle/">Your Chronicle:</a> Akashic Record (Akashic Record)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="game-body-div" id="settings-body" style="display: none;">
+            <div id="settings-body-stats" style="display: none;">
+
+            </div>
+            <div id="settings-body-settings" style="display: contents;">
+                <h2>welcome to the settings page, here you can configure your settings</h2>
+                <hr>
+                <br>
+                <label>auto save interval (seconds): <input type="number" id="autoSaveInterval" name="auto save interval"></label>
+                <hr>
+                <button id="DELETE_SAVE" style="background-color: red; color: white;">DELETE SAVE</button>
+                <div id="dev-settings" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="game-body-div" id="achievements-body" style="display: none;">
+            <table style="margin-left: auto; margin-right: auto; border-spacing: 24px 0px; border-collapse: collapse;">
+                <tbody>
+                    <tr>
+                        <td id="ach-1" class="ach-locked">
+                            <span>illegal Atomus</span>
+                            <br>
+                            <p>buy your first incriminator</p>
+                        </td>
+                        <td id="ach-2" class="ach-locked">
+                            <span>keeping things short</span>
+                            <br>
+                            <p>buy your first summarizer</p>
+                        </td>
+                        <td id="ach-3" class="ach-locked">
+                            <span>1,2,4</span>
+                            <br>
+                            <p>buy your first multiplier</p>
+                        </td>
+                        <td id="ach-4" class="ach-locked">
+                            <span>1,2,e4</span>
+                            <br>
+                            <p>buy your first exponentiator</p>
+                        </td>
+                        <td id="ach-5" class="ach-locked">
+                            <span>cooler Exponentiator</span>
+                            <br>
+                            <p>buy your first Tetrator</p>
+                        </td>
+                        <td id="ach-6" class="ach-locked">
+                            <span>cooler Tetrator</span>
+                            <br>
+                            <p>buy your first Pentator</p>
+                        </td>
+                        <td id="ach-7" class="ach-locked">
+                            <span>where's the next one?</span>
+                            <br>
+                            <p>buy every hyperoperator at least once</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="ach-8" class="ach-hidden">
+                            <p class="ach-hidden-text">???</p>
+                            <span>Time is a continuum</span>
+                            <br>
+                            <p>fracture reality</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
