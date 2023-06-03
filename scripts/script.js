@@ -1,5 +1,4 @@
 let player = localStorage.getItem('saveData')
-console.log(player)
 
 function changeMenu(buttonID) {
   // there is too much code being repeated here, create another function inside this function that takes a string like "hyper0" as input and deals with hiding/unhiding elements 
@@ -76,7 +75,6 @@ function changeMenu(buttonID) {
 
 const omegaReplacer = (key, value) => {
   if (value instanceof OmegaNum) {
-    console.log(value)
     return value.toJSON();
   }
   return value;
@@ -84,7 +82,7 @@ const omegaReplacer = (key, value) => {
 
 if (player === null || player === undefined) {
   console.log("invalid save data, generating a new one")
-  
+
   player = {
     "username": "Unknown",
     //"achievements": [{"id": 1, "unlocked": false}, {"id": 2, "unlocked": false}, {"id": 3, "unlocked": false}, {"id": 4, "unlocked": false}, {"id": 5, "unlocked": false}],
@@ -159,7 +157,6 @@ const doGameTick = (deltaP, time) => {
   // the comment above me is wrong
     if (time - lastSaved > player.configs.autoSaveInterval * 1000) {
       localStorage.setItem('saveData', btoa(JSON.stringify(player, omegaReplacer)));
-      console.log("just saved, took: " + (time - lastSaved))
       lastSaved = time;
   }
 
@@ -334,7 +331,6 @@ function checkAch(playerAch) {
 
     if (binaryRep & playerAch) {continue};
     if (achProg[i] > player.stats.prog) {continue}
-    console.log(achCond[i]())
     if (achCond[i]()) {
       player.achievements |= binaryRep
     }
