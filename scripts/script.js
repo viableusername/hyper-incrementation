@@ -115,7 +115,6 @@ if (player === null || player === undefined) {
   changeMenu(player.lastMenu);
 } else {
   console.log("save is valid")
-  console.log(atob(player))
   player = JSON.parse(atob(player));
   changeMenu(player.lastMenu);
 
